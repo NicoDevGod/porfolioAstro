@@ -1,0 +1,42 @@
+---
+import ExperienceItem from "./ExperienceItem.astro"
+
+const EXPERIENCE = [
+    {
+        date: "Actualmente...",
+        title: "Desarrollando proyectos personales.",
+        description: "Actualmente me encuentro trabajando en mi potencial para el desarrollo de soluciones digitales a traves del rol de Front-End.",
+    },
+    {
+        date: "Mayo - Diciembre 2023",
+        title: "Docente del area informatica - IP/CFT Santo Tomas, Ovalle.",
+        description: "Durante 2023 me desempeñe como profesor de algunas asignaturas dentro del area informatica del insituto, entre las cuales estuvieron: Programacion Web, Sistemas Operativos y Sistemas Operativos Windows. Ademas realice algunas ayudantias para otras asignaturas tales como Programacion Orientada a Objetos."
+    },
+    {
+        date: "Enero - Marzo 2023",
+        title: "Practica para Ingenieria en Informatica - Universidad Santo Tomas, La Serena.",
+        description: "Durante este periodo realice mi practica profesional y actividad de titulacion dentro del departamento de informatica del establecimiento, dentro del cual desempeñe tareas de soporte informatico como parte de mi practica y para mi actividad de titulacion desarrolle un HelpDesk."
+    },
+    {
+        date: "Enero - Marzo 2021",
+        title: "Desarrollador Junior - Hospital de Ovalle.",
+        description: "Previo a entrar a estudiar la ingenieria me desempeñe como programador junior dentro del Hospital de Ovalle donde trabaje en proyectos con diferentes lenguajes de programacion dentro de los cuales esta: PHP, Visual Basic, ASP.Net."
+    },
+    {
+        date: "Junio - Agosto 2019",
+        title: "Practica para Analista Programador",
+        description: "Primer encuentro con la industria de la programación, durante mi practica estuve desempeñando tareas de programador junior dentro de la empresa."
+    }
+]
+---
+<ol class="relative border-s border-gray-200 ml-3">    
+    {
+        EXPERIENCE.map((experience) => (
+            <li class="mb-10 ms-4">
+                    <ExperienceItem {...experience} />
+            </li>
+        ))
+    }              
+
+</ol>
+

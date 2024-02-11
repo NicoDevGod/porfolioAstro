@@ -1,0 +1,153 @@
+---
+import NextJS from "../icons/NextJS.astro"
+import TailwindIcon from "../icons/Tailwind.astro"
+import PCSoftIcon from "../icons/PCSoft.astro"
+import ReactLogo from "../icons/React.astro"
+import ViteLogo from "../icons/Vite.astro"
+import StrapiIcon from "../icons/Strapi.astro"
+import SQLIcon from "../icons/SQL.astro"
+import FirebaseIcon from "../icons/Firebase.astro"
+import AspIcon from "../icons/Asp.astro"
+import AzureIcon from "../icons/Azure.astro"
+import CIcon from "../icons/C.astro"
+import BootstrapIcon from "../icons/Bootstrap.astro"
+import JavascriptIcon from "../icons/Javascript.astro"
+import AstroIcon from "../icons/Astro.astro"
+const TAGS = {
+    NEXT: {
+        name: "Next.Js",
+        class:"bg-black text-white",
+        icon: NextJS
+    },
+    ASTRO: {
+        name: "Astro",
+        class: "bg-black text-white",
+        icon: AstroIcon
+    },
+    TAILWIND: {
+        name: "Tailwind",
+        class: "text-white bg-[#003159]",
+        icon: TailwindIcon
+    },
+    PCSOFT: {
+        name: "Windev",
+        class: "text-black bg-white",
+        icon: PCSoftIcon
+    },
+    REACT: {
+        name: "React",
+        class: "text-white bg-cyan-100/10",
+        icon: ReactLogo
+    },
+    VITE: {
+        name: "Vite JS",
+        class: "text-indigo-500 bg-white",
+        icon: ViteLogo
+    },
+    STRAPI: {
+        name: "Strapi",
+        class: "text-white bg-gray-300/10",
+        icon: StrapiIcon
+    },
+    SQL: {
+        name: "SQL Server",
+        class: "bg-black text-white",
+        icon: SQLIcon
+    },
+    FIREBASE:{
+        name: "Firebase",
+        class: "bg-white text-orange-400/90",
+        icon: FirebaseIcon  
+    },
+    ASP: {
+        name: "ASP.Net",
+        class: "bg-white text-cyan-800/90",
+        icon: AspIcon
+    },
+    AZURE:{
+        name: "Azure",
+        class: "bg-black text-white",
+        icon: AzureIcon
+    },
+    C:{
+        name: "C#",
+        class: "bg-white text-indigo-900",
+        icon: CIcon
+    },
+    BOOTSTRAP: {
+        name: "Bootstrap",
+        class: "bg-black text-white",
+        icon: BootstrapIcon
+    },
+    JAVASCRIPT: {
+        name: "Javascript",
+        class: "bg-white text-black",
+        icon: JavascriptIcon
+    }
+}
+const PROJECTS = [
+    {
+        title:'Medsoft',
+        description:'Proyecto desarrollado en Windev, el cual cumplia con el objetivo de resolver el problema asignado en este caso fue el de administrar una clinica medica privada, la solucion propuesta se encarga de organizar el horario de los medicos de la consulta, agendar las horas para los clientes, control del inventario de medicamentos, permitir un acceso controlado al software a traves de un inicio de sesion, otorgar accesibilidad a examenes y diagnosticos resultado de las consultas medicas, entre otras caracteristicas.',
+        link:'#',
+        github:'#',
+        image:'/projects/medsoft1.webp',
+        tags:[ TAGS.SQL, TAGS.PCSOFT]
+    },
+    {
+        title: 'Tu primera casa',
+        description: 'Proyecto desarrollado en React - Vite, el cual esta enfocado en el negocio inmobiliario desempeñando el papel de ser el punto de encuentro entre la persona que quiera comprar/arrendar una propiedad y el propietario del inmueble.',
+        link: '#',
+        github: '#',
+        image: '/projects/propertys1.webp',
+        tags: [TAGS.REACT, TAGS.VITE, TAGS.TAILWIND, TAGS.STRAPI, TAGS.JAVASCRIPT]
+    },
+    {
+        title: 'Gestion de solicitudes de operaciones',
+        description: 'Proyecto desarrollado en ASP.Net, El departamento de operaciones de la Universidad Santo Tomas - La Serena, esta encargado de las funciones de soporte y gestion del area mobiliaria del establecimiento, estas funciones presentan algunos incovenientes para los cuales se desarollo esta solucion a traves de una aplicacion web que apoye al equipo de operaciones y resuleva las problematicas que se plantearon.  ',
+        link: '#',
+        github: '#',
+        image: '/projects/operaciones1.webp',
+        tags: [TAGS.ASP, TAGS.SQL, TAGS.C, TAGS.BOOTSTRAP, TAGS.JAVASCRIPT]
+    },
+    {
+        title: 'Esmeralda Repos',
+        description: 'Proyecto desarrollado en React - Vite, este proyecto esta desarrollado para el negocio "Esmeralda Repos", enfocado a la venta de deliciosos queques de todos tamaños y sabores. ',
+        link: '#',
+        github: '#',
+        image: '../projects/esmeraldarepos.webp',
+        tags: [TAGS.REACT, TAGS.VITE, TAGS.TAILWIND, TAGS.JAVASCRIPT]
+    },
+    {
+        title: 'Porfolio',
+        description: 'Proyecto desarrollado en Astro, ya que un porfolio es una pagina bastante estatica utilice Astro ya que es lo mejor en cuanto a rendimiento para paginas estaticas.',
+        link: '#',
+        github: '#',
+        image: '../projects/porfolio.webp',
+        tags: [TAGS.TAILWIND, TAGS.ASTRO]
+    }
+]
+---
+{
+    PROJECTS.map(({ title, description, tags, image}) => (
+        <article>
+            <h3 class="text-2xl font-semibold text-yellow-100/90 mb-2 mt-24">{title}</h3>
+            <p class="text-lg mb-4 text-pretty">{description}</p>
+            <ul class="flex gap-x-2 md:gap-x-4 flex-row mb-4 ">
+                {
+                    tags.map(tag =>(
+                        <li class="">
+                            <span class={`flex md:gap-x-2  rounded-full text-xs ${tag.class} py-1 px-2`}>
+                                <tag.icon class="size-4"/>
+                                {tag.name}
+                            </span>     
+                        </li>
+                    ))
+                }
+            </ul>
+            <img src={image} alt="..." class="rounded-lg md:hover:scale-110 transition-all duration-400" />
+            
+
+        </article>
+    ))
+}
