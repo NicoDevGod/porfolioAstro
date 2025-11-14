@@ -88,7 +88,9 @@ const TAGS = {
 const PROJECTS = [
     {
         title:'Medsoft',
+        titleId: 'project-title-0',
         description:'Project developed in Windev, which fulfilled the objective of solving the assigned problem in this case was to manage a private medical clinic, the proposed solution is responsible for organizing the schedule of the doctors of the consultation, scheduling hours for customers, inventory control of medicines, allow controlled access to the software through a login, provide accessibility to examinations and diagnoses resulting from medical consultations, among other features.',
+        descId: 'project-desc-0',
         link:'#',
         github:'#',
         image:'/projects/medsoft1.webp',
@@ -96,7 +98,9 @@ const PROJECTS = [
     },
     {
         title: 'Your first home',
+        titleId: 'project-title-1',
         description: 'Project developed in React - Vite, which is focused on the real estate business playing the role of being the meeting point between the person who wants to buy/lease a property and the owner of the property.',
+        descId: 'project-desc-1',
         link: '#',
         github: '#',
         image: '/projects/propertys1.webp',
@@ -104,7 +108,9 @@ const PROJECTS = [
     },
     {
         title: 'Operations request management',
+        titleId: 'project-title-2',
         description: 'Project developed in ASP.Net, The operations department of the Universidad Santo Tomas - La Serena, is in charge of the functions of support and management of the furniture area of the establishment, these functions have some drawbacks for which this solution was developed through a web application that supports the operations team and solve the problems that arose.  ',
+        descId: 'project-desc-2',
         link: '#',
         github: '#',
         image: '/projects/operaciones1.webp',
@@ -112,7 +118,9 @@ const PROJECTS = [
     },
     {
         title: 'Esmeralda Repos',
+        titleId: 'project-title-3',
         description: 'Project developed in React - Vite, this project is developed for the business "Esmeralda Repos", focused on the sale of delicious cakes of all sizes and flavors. ',
+        descId: 'project-desc-3',
         link: '#',
         github: '#',
         image: '../projects/esmeraldarepos.webp',
@@ -120,7 +128,9 @@ const PROJECTS = [
     },
     {
         title: 'Porfolio',
+        titleId: 'project-title-4',
         description: 'Project developed in Astro, since a portfolio is a fairly static page I used Astro as it is the best in terms of performance for static pages.',
+        descId: 'project-desc-4',
         link: '#',
         github: '#',
         image: '../projects/porfolio.webp',
@@ -129,10 +139,10 @@ const PROJECTS = [
 ]
 ---
 {
-    PROJECTS.map(({ title, description, tags, image}) => (
+    PROJECTS.map(({ title, description, tags, image, titleId, descId}) => (
         <article>
-            <h3 class="text-2xl font-semibold text-yellow-100/90 mb-2 mt-24">{title}</h3>
-            <p class="text-lg mb-4 text-pretty">{description}</p>
+            <h3 id={titleId} class="text-2xl font-semibold text-yellow-100/90 mb-2 mt-24">{title}</h3>
+            <p id={descId} class="text-lg mb-4 text-pretty">{description}</p>
             <ul class="flex gap-x-2 md:gap-x-4 flex-row mb-4 ">
                 {
                     tags.map(tag =>(

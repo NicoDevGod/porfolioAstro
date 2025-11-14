@@ -11,7 +11,7 @@ const { title, description } = Astro.props;
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang="en" id="html-root">
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="description" content={description} />
@@ -19,12 +19,30 @@ const { title, description } = Astro.props;
 		<link rel="icon" type="image/svg+xml" href="https://i.ibb.co/0CShq1b/Sin-t-tulo.png" />
 		<meta name="generator" content={Astro.generator} />
 		<title>{title}</title>
+		<script>
+			// Script inline para detección rápida de idioma antes de que cargue el contenido
+			(function() {
+				const savedLang = localStorage.getItem('preferred-language');
+				const browserLang = navigator.language || navigator.userLanguage;
+				const langCode = browserLang.split('-')[0].toLowerCase();
+				
+				let detectedLang = 'en';
+				if (savedLang && (savedLang === 'es' || savedLang === 'en')) {
+					detectedLang = savedLang;
+				} else if (langCode === 'es') {
+					detectedLang = 'es';
+				}
+				
+				document.documentElement.lang = detectedLang;
+			})();
+		</script>
 	</head>
 	<body class="bg-[#000000] bg-[radial-gradient(#ffffff33_1px,#00091d_1px)] bg-[size:20px_20px] ">
 
 		<Header/>
 		<slot />
 		<Footer />
+		<script type="module" src="/src/js/language-detector.js"></script>
 	</body>
 </html>
 <style is:global>
