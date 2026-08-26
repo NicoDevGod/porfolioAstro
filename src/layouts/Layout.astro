@@ -17,7 +17,7 @@ const { title, description } = Astro.props;
 		<meta charset="UTF-8" />
 		<meta name="description" content={description} />
 		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="https://i.ibb.co/0CShq1b/Sin-t-tulo.png" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="generator" content={Astro.generator} />
 		<title>{title}</title>
 		<script>
@@ -38,7 +38,7 @@ const { title, description } = Astro.props;
 			})();
 		</script>
 	</head>
-	<body class="bg-[#000000] bg-[radial-gradient(#ffffff33_1px,#00091d_1px)] bg-[size:20px_20px] ">
+	<body>
 
 		<Header/>
 		<slot />
@@ -56,11 +56,23 @@ const { title, description } = Astro.props;
 	}
 
 	body {
-		background: #050505;
+		background-color: #050505;
 		display: flex;
 		flex-direction: column;
-				
 		min-height: 100vh;
+		position: relative;
+	}
+	body::before {
+		content: "";
+		position: fixed;
+		inset: 0;
+		z-index: -1;
+		pointer-events: none;
+		background:
+			radial-gradient(680px circle at 12% 18%, rgba(253, 224, 71, 0.16), transparent 60%),
+			radial-gradient(560px circle at 88% 12%, rgba(129, 140, 248, 0.16), transparent 60%),
+			radial-gradient(760px circle at 78% 90%, rgba(252, 165, 165, 0.14), transparent 60%);
+		filter: blur(80px);
 	}
 	@media (prefers-reduced-motion: reduce){
 		html{

@@ -93,7 +93,7 @@ const PROJECTS = [
         descId: 'project-desc-0',
         link:'#',
         github:'#',
-        image:'/projects/medsoft1.webp',
+        image: '/projects/medsoft1.webp',
         tags:[ TAGS.SQL, TAGS.PCSOFT]
     },
     {
@@ -123,7 +123,7 @@ const PROJECTS = [
         descId: 'project-desc-3',
         link: '#',
         github: '#',
-        image: '../projects/esmeraldarepos.webp',
+        image: '/projects/esmeraldarepos.webp',
         tags: [TAGS.REACT, TAGS.VITE, TAGS.TAILWIND, TAGS.JAVASCRIPT]
     },
     {
@@ -133,7 +133,7 @@ const PROJECTS = [
         descId: 'project-desc-4',
         link: '#',
         github: '#',
-        image: '../projects/porfolio.webp',
+        image: '/projects/porfolio.webp',
         tags: [TAGS.TAILWIND, TAGS.ASTRO]
     }
 ]
@@ -155,7 +155,7 @@ const PROJECTS = [
                     ))
                 }
             </ul>
-            <img src={image} alt="..." class="rounded-lg md:hover:scale-110 transition-all duration-400" />
+            <img src={image} alt={`${title} project screenshot`} class="rounded-lg md:hover:scale-110 transition-all duration-400" />
             
 
         </article>
