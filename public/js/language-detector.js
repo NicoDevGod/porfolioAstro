@@ -69,6 +69,13 @@ const translations = {
       description1: "Passionate and highly motivated web developer with a solid technical background and endless creativity. My focus is on creating innovative and visually appealing digital solutions.",
       description2: "I am an enthusiastic collaborator, committed to effective communication and building successful team solutions. Ready to face new challenges, I am excited to contribute my experience and passion to the world of web development."
     },
+    contact: {
+      description: "Have a project in mind or just want to say hi? Send me a message and I'll get back to you as soon as possible.",
+      nameLabel: "Name",
+      emailLabel: "Email",
+      messageLabel: "Message",
+      send: "Send message"
+    },
     footer: {
       copyright: "© 2023",
       allRights: "All Rights Reserved."
@@ -142,6 +149,13 @@ const translations = {
       title: "Ingeniero en Informática",
       description1: "Desarrollador web apasionado y altamente motivado con una sólida formación técnica y creatividad infinita. Mi enfoque está en crear soluciones digitales innovadoras y visualmente atractivas.",
       description2: "Soy un colaborador entusiasta, comprometido con la comunicación efectiva y la construcción de soluciones exitosas en equipo. Listo para enfrentar nuevos desafíos, estoy emocionado de contribuir con mi experiencia y pasión al mundo del desarrollo web."
+    },
+    contact: {
+      description: "¿Tienes un proyecto en mente o solo quieres saludar? Envíame un mensaje y te responderé lo antes posible.",
+      nameLabel: "Nombre",
+      emailLabel: "Correo",
+      messageLabel: "Mensaje",
+      send: "Enviar mensaje"
     },
     footer: {
       copyright: "© 2023",
@@ -383,7 +397,33 @@ function updatePageContent(lang) {
   if (aboutDesc2) {
     aboutDesc2.textContent = t.about.description2;
   }
-  
+
+  // Actualizar Contacto
+  const contactDesc = document.getElementById('contact-desc');
+  if (contactDesc) {
+    contactDesc.textContent = t.contact.description;
+  }
+
+  const contactNameLabel = document.getElementById('contact-name-label');
+  if (contactNameLabel) {
+    contactNameLabel.textContent = t.contact.nameLabel;
+  }
+
+  const contactEmailLabel = document.getElementById('contact-email-label');
+  if (contactEmailLabel) {
+    contactEmailLabel.textContent = t.contact.emailLabel;
+  }
+
+  const contactMessageLabel = document.getElementById('contact-message-label');
+  if (contactMessageLabel) {
+    contactMessageLabel.textContent = t.contact.messageLabel;
+  }
+
+  const contactSubmit = document.getElementById('contact-submit');
+  if (contactSubmit && !contactSubmit.disabled) {
+    contactSubmit.textContent = t.contact.send;
+  }
+
   // Actualizar Footer
   const footerCopyright = document.getElementById('footer-copyright');
   if (footerCopyright) {
